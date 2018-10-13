@@ -36,7 +36,7 @@
         var message_side = args.name === getUserName() ? 'right' : 'left';
         message = new Message({
             text: args.text,
-            message_side: message_side
+            message_side: 'right'
         });
         message.draw();
         return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);

@@ -1,114 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
+		<title>Friend.ly</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>My Website</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/static/css/index.css">
+	</head>
+	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-	<link rel="stylesheet" href="/static/css/index.css">
-</head>
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container">
+		    <div class="navbar-header">
+		      <div class="navbar-brand">
+						<a href="/index.html">
+		          <img class="logo-container" src="./static/images/logo.png"/ style="width: 15%;">
+						</a>
+		      </div>
+		    </div>
+		  </div>
+		</nav>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="navbar-brand">
-          <img class="logo-container" src="./static/images/logo.png"/ style="width: 15%;">
-      </div>
-    </div>
-		<div id="user-container">
-			<div hidden id="user-pic"></div>
-			<div hidden id="user-name"></div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<button hidden id="sign-in"type="button" class="btn btn-warning" style="margin-top:7px;">Sign In</button>
-					<button hidden id="sign-up" type="button" class="btn btn-warning" style="margin-top:7px;">Sign Up</button>
-					<button hidden id="sign-out" type="button" class="btn btn-warning" style="margin-top:7px;">Sign Out</button>
-				</ul>
-			</div>
+		<div id="home" class="jumbotron text-center">
+		  <h1 style="font-size: 75pt;font-weight:bold;padding-top:100px;">Welcome to friendly</h1>
+		  <p style="font-size: 20pt;">Sharing is Caring</p>
+			<a href="/GetStarted.html" class="btn btn-warning getstarted" role="button">Get Started</a>
 		</div>
-  </div>
-</nav>
 
+		<!-- Container (About Section) -->
+		<div id="about" class="container-fluid">
+		  <div class="row">
+		    <div class="col-sm-7">
+		      <h2>About friendly</h2><br>
 
-<div id="home" class="jumbotron text-center">
-  <h1 style="font-size: 75pt;font-weight:bold;padding-top:100px;">Welcome to friendly</h1>
-  <p style="font-size: 20pt;">Sharing is Caring</p>
-	<a href="#about" class="btn btn-warning" role="button">Sign Up</a>
+		      <h4>Give Help, Get Rewarded</h4><br>
+		      <p>We at Friendly believe in human connection above anything else.
+		        Whether you’re looking to share your worries or listen to someone else’s, there’s a place for you here.
+		        Select your role as venter or listener and get matched with a stranger you can chat with. Lastly, you can
+		        gain badges in exchange for rewards. So what are you waiting for? We’re excited to have you aboard!</p>
+		    </div>
+		    <div class="col-sm-5" align="center">
+		      <span class="glyphicon glyphicon-heart logo" align="center"></span>
+		    </div>
+		  </div>
+		</div>
 
-</div>
+		<!-- Container (Portfolio Section) -->
+		<div id="portfolio" class="container-fluid text-center bg-grey">
+		  <h2>Get Started</h2><br>
+		  <h4 style="margin-bottom:20px;">Three Easy Steps</h4>
+		  <div class="row text-center slideanim">
+		    <div class="col-sm-4">
+		      <div class="thumbnail">
+		        <img src="./static/images/vent.png" alt="vent" width="400" height="300">
+		        <p><strong>Vent or Listen</strong></p>
+		        <p>Select What you'd like to do</p>
+		      </div>
+		    </div>
+		    <div class="col-sm-4">
+		      <div class="thumbnail">
+		        <img src="./static/images/vent.png" alt="Vent" width="400" height="300">
+		        <p><strong>Chat</strong></p>
+		        <p>Chat with an anonymous stranger</p>
+		      </div>
+		    </div>
+		    <div class="col-sm-4">
+		      <div class="thumbnail">
+		        <img src="./static/images/profile.png" alt="Vent" width="400" height="300">
+		        <p><strong>Get Rewarded</strong></p>
+		        <p>Recieve badges that you can exchange for rewards</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
-<!-- Container (About Section) -->
-<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-7">
-      <h2>About friendly</h2><br>
-
-      <h4>Give Help, Get Rewarded</h4><br>
-      <p>We at Friendly believe in human connection above anything else.
-        Whether you’re looking to share your worries or listen to someone else’s, there’s a place for you here.
-        Select your role as venter or listener and get matched with a stranger you can chat with. Lastly, you can
-        gain badges in exchange for rewards. So what are you waiting for? We’re excited to have you aboard!</p>
-    </div>
-    <div class="col-sm-5" align="center">
-      <span class="glyphicon glyphicon-heart logo" align="center"></span>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Get Started</h2><br>
-  <h4>Three Easy Steps</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="./static/images/vent.png" alt="vent" width="400" height="300">
-        <p><strong>Vent or Listen</strong></p>
-        <p>Select What you'd like to do</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="./static/images/vent.png" alt="Vent" width="400" height="300">
-        <p><strong>Chat</strong></p>
-        <p>Chat with an anonymous stranger</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="./static/images/profile.png" alt="Vent" width="400" height="300">
-        <p><strong>Get Rewarded</strong></p>
-        <p>Recieve badges that you can exchange for rewards</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div style="text-align:center;">
-<h1 style="font-size: 50pt;font-weight:bold;color:#99A8D1;">Try it Today</h1>
-<svg height="210" width="500">
-  <line x1="50%" y1="0" x2="50%" y2="100" style="stroke:rgb(0,0,0);stroke-width:0.5" />
-</svg>
-</br>
-	<a href="#about" class="btn-lg btn-warning" role="button">Sign Up</a>
-</div>
-
-
-
+		<div style="text-align:center;">
+		<h1 style="font-size: 50pt;font-weight:bold;color:#99A8D1;">Try It Today</h1>
+		<svg height="210" width="500">
+		  <line x1="50%" y1="0" x2="50%" y2="100" style="stroke:rgb(0,0,0);stroke-width:0.5;" />
+		</svg>
+		</br>
+			<a href="/GetStarted.html" class="btn-lg btn-warning getstarted" role="button">Get Started</a>
+		</div>
 
 		<footer class="container-fluid text-center">
 		  <a href="#myPage" title="To Top">
@@ -116,19 +94,6 @@
 		  </a>
 		</footer>
 
-		<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
-		<script>
-			// Initialize Firebase
-			var config = {
-				apiKey: "AIzaSyBHAzVwmvR68EckfNZo7i0gIzUudZUvzaY",
-				authDomain: "friendly-hack.firebaseapp.com",
-				databaseURL: "https://friendly-hack.firebaseio.com",
-				projectId: "friendly-hack",
-				storageBucket: "friendly-hack.appspot.com",
-				messagingSenderId: "788728620931"
-			};
-			firebase.initializeApp(config);
-		</script>
 		<script src="/static/javascript/index.js"></script>
 	</body>
 </html>

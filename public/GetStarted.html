@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Friend.ly</title>
+
+    <link rel="icon" type="image/jpg" href=“favicon”>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/discover.css">
+    <link rel="stylesheet" type="text/css" href="assets/global.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="/static/css/GetStarted.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="/index.html">
+              <img class="logo-container" src="./static/images/logo.png"/ style="width: 15%;">
+            </a>
+          </div>
+        </div>
+        <div id="user-container">
+    			<div hidden id="user-pic"></div>
+    			<div hidden id="user-name"></div>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+            <i class="material-icons">account_circle</i>Sign-in with Google
+          </button>
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+            Sign-out
+          </button>
+    		</div>
+      </div>
+    </nav>
+    <div id="Options" class="container-fluid text-center" style="margin-top:20px;">
+        <h1>What Would You Like To Do Today?</h1>
+      <br>
+      <div class="row">
+      <!--<div class="row slideanim">-->
+      <div class="col-sm-2">
+      </div>
+        <div class="col-sm-4">
+    		<div class="content pull-right">
+    		<div class="content-overlay"></div>
+    		<img class="content-image" src="/static/images/hackcoppah.png">
+    		<div class="content-details fadeIn-bottom">
+    		<a href="/chat.html"><h3 class="content-title">VENT</h3></a>
+    		</div>
+    		</div>
+        </div>
+          <div class="col-sm-4">
+      		<div class="content pull-left">
+      		<div class="content-overlay"></div>
+      		<img class="content-image" src="/static/images/hackcoppah2.png">
+      		<div class="content-details fadeIn-bottom">
+      		<a href="/chat.html"><h3 class="content-title">LISTEN</h3></a>
+      		</div>
+      		</div>
+          </div>
+      </div>
+    </br>
+      <div class="row text-center">
+        <button type="button" class="btn btn-secondary">Talk With a Professional</button>
+        <button type="button" class="btn btn-warning" >Pro</button>
+      </br>
+    <p>If you are facing a life threatening issue please call 911</p>
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyBHAzVwmvR68EckfNZo7i0gIzUudZUvzaY",
+				authDomain: "friendly-hack.firebaseapp.com",
+				databaseURL: "https://friendly-hack.firebaseio.com",
+				projectId: "friendly-hack",
+				storageBucket: "friendly-hack.appspot.com",
+				messagingSenderId: "788728620931"
+			};
+			firebase.initializeApp(config);
+		</script>
+		<script src="/static/javascript/GetStarted.js"></script>
+  </body>
+</html>
