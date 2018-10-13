@@ -14,8 +14,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles/main.css">
 
-    <style>
+  <style>
   	.content {
     position: relative;
     width: 90%;
@@ -114,7 +116,7 @@
   	  margin-bottom: 30px;
   	}
   	h3 {
-  		font-size: 21px
+  		font-size: 21px;
   	  line-height: 1.375em;
   	}
   	.grow img{
@@ -294,13 +296,11 @@
   		font-size: 150px;
   	}
   	}
-  	</style>
-  </head>
+  </style>
+</head>
 
 
   <body>
-
-
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -310,23 +310,16 @@
             <span class="icon-bar"></span>
           </button>
           <div class="navbar-brand">
-              <img class="logo-container" src="logo.png"/ style="width: 15%;">
+              <img class="logo-container" src="logo.png" style="width: 15%;">
           </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav navbar-right">
-            <button type="button" class="btn btn-warning" style="margin-top:7px;">Log in</button>
-            <button type="button" class="btn btn-warning" style="margin-top:7px;">Sign Up</button>
+
           </ul>
         </div>
       </div>
     </nav>
-
-
-
-
-
-
 
     <div id="Options" class="container-fluid text-center" style="margin-top:20px;">
         <h1>What Would You Like to do Today?</h1>
@@ -355,46 +348,21 @@
         </div>
 
       </div>
-    </br>
+    <br/>
       <div class="row text-center">
         <button type="button" class="btn btn-secondary">Talk With a Professional</button>
         <button type="button" class="btn btn-warning" >Pro</button>
-      </br>
+      <br/>
     <p>If you are facing a life threatening issue please call 911</p>
       </div>
     </div>
 
-
+    <div id="must-signin-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
 
     <script>
-    /* $(document).ready(function (){
-      // create a LatLng object containing the coordinate for the center of the map
-      var latlng = new google.maps.LatLng(-33.86455, 151.209);
-      // prepare the map properties
-      var options = {
-        zoom: 15,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        navigationControl: true,
-        mapTypeControl: false,
-        scrollwheel: false,
-        disableDoubleClickZoom: true
-      };
-      // initialize the map object
-      var map = new google.maps.Map(document.getElementById('google_map'), options);
-      // add Marker
-      var marker1 = new google.maps.Marker({
-        position: latlng, map: map
-      });
-      // add listener for a click on the pin
-      google.maps.event.addListener(marker1, 'click', function() {
-        infowindow.open(map, marker1);
-      });
-      // add information window
-      var infowindow = new google.maps.InfoWindow({
-        content:  '<div class="info"><strong>This is my company</strong><br><br>My company address is here<br> 32846 Sydney</div>'
-      });
-    */
     $(document).ready(function (){
       // Add smooth scrolling to all links in navbar + footer link
       $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -425,5 +393,11 @@
       });
     })
     </script>
+    <script src="/__/firebase/5.5.3/firebase-app.js"></script>
+    <script src="/__/firebase/5.5.3/firebase-auth.js"></script>
+    <script src="/__/firebase/5.5.3/firebase-database.js"></script>
+    <script src="/__/firebase/5.5.3/firebase-storage.js"></script>
+    <script src="/__/firebase/5.5.3/firebase-messaging.js"></script>
+    <script src="/__/firebase/init.js"></script>
   </body>
 </html>

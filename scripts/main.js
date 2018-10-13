@@ -72,12 +72,6 @@ function saveMessage(messageText) {
   });
 }
 
-// // Saves a new message containing an image in Firebase.
-// // This first saves the image in Firebase storage.
-// function saveImageMessage(file) {
-//   // TODO 9: Posts a new image as a message.
-// }
-
 // Saves the messaging device token to the datastore.
 function saveMessagingDeviceToken() {
   // TODO 10: Save the device token in the realtime datastore
@@ -251,9 +245,6 @@ var messageListElement = document.getElementById('messages');
 var messageFormElement = document.getElementById('message-form');
 var messageInputElement = document.getElementById('message');
 var submitButtonElement = document.getElementById('submit');
-var imageButtonElement = document.getElementById('submitImage');
-var imageFormElement = document.getElementById('image-form');
-var mediaCaptureElement = document.getElementById('mediaCapture');
 var userPicElement = document.getElementById('user-pic');
 var userNameElement = document.getElementById('user-name');
 var signInButtonElement = document.getElementById('sign-in');
