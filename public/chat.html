@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.5.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.5.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.5.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.5.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.5.4/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./static/css/chat.css">
+  </head>
+  <body>
+    <div class="chat_window">
+      <div class="top_menu row align-items-center">
+        <div class="col-sm"></div>
+        <div class="title col-sm">
+          <span>Anonymous</span>
+        </div>
+        <div class="button col-sm">
+          <button id="wrapup">
+            <span>Wrap Up</span>
+          </button>
+        </div>
+      </div>
+      <ul class="messages"></ul>
+      <div class="bottom_wrapper clearfix">
+        <div class="message_input_wrapper">
+          <input class="message_input" placeholder="Type your message here..." />
+        </div>
+        <div class="send_message">
+          <div class="icon"></div>
+          <div class="text">Send</div>
+        </div>
+      </div>
+    </div>
+    <div class="message_template">
+      <li class="message">
+        <div class="avatar"></div>
+        <div class="text_wrapper">
+          <div class="text"></div>
+        </div>
+      </li>
+    </div>
+    <script src="/static/javascript/chat.js"></script>
+  </body>
+</html>
