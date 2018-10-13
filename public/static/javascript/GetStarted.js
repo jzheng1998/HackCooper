@@ -89,4 +89,21 @@
   signOutButtonElement.click(function (e) { signOut(); });
 
   $(initFirebaseAuth);
+
+  var search;
+
+  search = function () {
+    window.location.href = '/chat.html?' + $('#searchBar').val();
+  }
+
+  $('#searchButton').click(function (e) {
+    search();
+  });
+
+  $('#searchBar').keypress(function (e) {
+    if (e.which === 13) {
+      e.preventDefault();
+      search();
+    }
+  });
 }.call(this));

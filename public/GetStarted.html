@@ -8,16 +8,15 @@
     <title>Friend.ly</title>
 
     <link rel="icon" type="image/jpg" href=“favicon”>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/discover.css">
-    <link rel="stylesheet" type="text/css" href="assets/global.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="/static/css/GetStarted.css">
   </head>
@@ -44,39 +43,59 @@
     		</div>
       </div>
     </nav>
+
     <div id="Options" class="container-fluid text-center" style="margin-top:20px;">
-        <h1>What Would You Like To Do Today?</h1>
+      <h1>What Would You Like To Do Today?</h1>
       <br>
-      <div class="row">
-      <!--<div class="row slideanim">-->
-      <div class="col-sm-2">
-      </div>
-        <div class="col-sm-4">
-    		<div class="content pull-right">
-    		<div class="content-overlay"></div>
-    		<img class="content-image" src="/static/images/hackcoppah.png">
-    		<div class="content-details fadeIn-bottom">
-    		<a href="/chat.html"><h3 class="content-title">VENT</h3></a>
-    		</div>
-    		</div>
-        </div>
+        <div class="row">
+        <!--<div class="row slideanim">-->
+          <div class="col-sm-2"></div>
           <div class="col-sm-4">
-      		<div class="content pull-left">
-      		<div class="content-overlay"></div>
-      		<img class="content-image" src="/static/images/hackcoppah2.png">
-      		<div class="content-details fadeIn-bottom">
-      		<a href="/chat.html"><h3 class="content-title">LISTEN</h3></a>
-      		</div>
-      		</div>
+            <div class="content pull-right">
+            <div class="content-overlay"></div>
+      		    <img class="content-image" src="/static/images/hackcoppah.png">
+              <div class="content-details fadeIn-bottom">
+                <a href="/chat.html">
+                  <h3 class="content-title">VENT</h3>
+                </a>
+              </div>
+            </div>
           </div>
-      </div>
-    </br>
-      <div class="row text-center">
-        <button type="button" class="btn btn-secondary">Talk With a Professional</button>
-        <button type="button" class="btn btn-warning" >Pro</button>
+          <div class="col-sm-4">
+            <div class="content pull-left">
+              <div class="content-overlay"></div>
+              <img class="content-image" src="/static/images/hackcoppah2.png">
+              <div class="content-details fadeIn-bottom">
+                <a href="/chat.html">
+                  <h3 class="content-title">LISTEN</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </br>
-    <p>If you are facing a life threatening issue please call 911</p>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-8">
+            <form class="card card-sm">
+              <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                  <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <div class="col">
+                  <input type="text" id="searchBar" class="form-control form-control-lg form-control-borderless" placeholder="Enter your location to find a professional near you">
+                </div>
+                <div class="col-auto">
+                  <input type="button" id="searchButton" class="btn btn-lg btn-success" value="Search"/>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
+      <p>If you are facing a life threatening issue please call 911</p>
+
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
