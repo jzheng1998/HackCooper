@@ -1,5 +1,7 @@
 (function () {
-    var Message;
+
+    var getUserName, isUserSignedIn;
+    var Message, displayMessage;
     Message = function (arg) {
         this.text = arg.text, this.message_side = arg.message_side;
         this.draw = function (_this) {
@@ -15,43 +17,84 @@
         }(this);
         return this;
     };
+
+    getUserName = function () {
+        if (isUserSignedIn()) {
+            return firebase.auth().currentUser.displayName;
+        }
+        return '';
+    }
+
+    isUserSignedIn = function () {
+        return !!firebase.auth().currentUser;
+    }
+
+    displayMessage = function(args) {
+        var $messages, message;
+        $messages = $('.messages');
+        console.log(args.name);
+        var message_side = args.name === getUserName() ? 'right' : 'left';
+        message = new Message({
+            text: args.text,
+            message_side: message_side
+        });
+        message.draw();
+        return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
+    }
+
     $(function () {
-        var getMessageText, message_side, sendMessage;
-        message_side = 'right';
+        var saveMessage, getMessageText;
+        // Saves a new message on the Firebase DB.
+        saveMessage = function () {
+            // Check if the message is empty
+            var messageText = getMessageText();
+            if (!messageText) {
+              return;
+            }
+            $('.message_input').val('');
+            // Push a new message to Firebase (new msg entry)
+            return firebase.database().ref('/messages/').push({
+              text: messageText
+            }).catch(function(error) {
+              console.error("Can't write new message to Firebase DB", error);
+            });
+        }
         getMessageText = function () {
             var $message_input;
             $message_input = $('.message_input');
             return $message_input.val();
         };
-        sendMessage = function (text) {
-            var $messages, message;
-            if (text.trim() === '') {
-                return;
-            }
-            $('.message_input').val('');
-            $messages = $('.messages');
-            message_side = message_side === 'left' ? 'right' : 'left';
-            message = new Message({
-                text: text,
-                message_side: message_side
-            });
-            message.draw();
-            return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
-        };
         $('.send_message').click(function (e) {
-            return sendMessage(getMessageText());
+            return saveMessage();
         });
         $('.message_input').keyup(function (e) {
             if (e.which === 13) {
-                return sendMessage(getMessageText());
+                return saveMessage();
             }
         });
-        sendMessage('Hello Philip! :)');
-        setTimeout(function () {
-            return sendMessage('Hi Sandy! How are you?');
-        }, 1000);
-        return setTimeout(function () {
-            return sendMessage('I\'m fine, thank you!');
-        }, 2000);
+    });
+
+    // Checks that the Firebase SDK has been correctly setup and configured.
+    $(function () {
+        if (!window.firebase || !(firebase.app instanceof Function) || !firebase.app().options) {
+            window.alert('You have not configured and imported the Firebase SDK. ' +
+                'Make sure you go through the codelab setup instructions and make ' +
+                'sure you are running the codelab using `firebase serve`');
+        }
+    });
+
+    // Loads chat messages history and listens for upcoming ones.
+    $(function () {
+        var callback = function (snap) {
+          var data = snap.val();
+          var messages = new displayMessage({
+              key: snap.key,
+              name: data.name,
+              text: data.text,
+              profilePicUrl: data.profilePicUrl
+          });
+      }
+      firebase.database().ref('/messages/').limitToLast(15).on('child_added', callback);
+      firebase.database().ref('/messages/').limitToLast(15).on('child_changed', callback);
     });
 }.call(this));

@@ -13,11 +13,11 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="./static/css/chat.css">
   </head>
@@ -53,6 +53,19 @@
         </div>
       </li>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBHAzVwmvR68EckfNZo7i0gIzUudZUvzaY",
+        authDomain: "friendly-hack.firebaseapp.com",
+        databaseURL: "https://friendly-hack.firebaseio.com",
+        projectId: "friendly-hack",
+        storageBucket: "friendly-hack.appspot.com",
+        messagingSenderId: "788728620931"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="/static/javascript/chat.js"></script>
   </body>
 </html>

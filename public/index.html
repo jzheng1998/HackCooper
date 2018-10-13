@@ -20,6 +20,11 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
+    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="./static/css/index.css">
   </head>
 
@@ -36,11 +41,17 @@
               <img class="logo-container" src="./static/images/logo.png"/ style="width: 15%;">
           </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <button type="button" class="btn btn-warning" style="margin-top:7px;">Log in</button>
-            <button type="button" class="btn btn-warning" style="margin-top:7px;">Sign Up</button>
-          </ul>
+        <div id="user-container">
+          <div hidden id="user-pic"></div>
+          <div hidden id="user-name"></div>
+          <!-- <button hidden id="sign-in" type="button" class="btn btn-warning" style="margin-top:7px;">Sign In</button>
+          <button hidden id="sign-out" type="button" class="btn btn-warning" style="margin-top:7px;">Sign Out</button> -->
+          <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+            Sign-out
+          </button>
+          <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+            <i class="material-icons">account_circle</i>Sign-in with Google
+          </button>
         </div>
       </div>
     </nav>
@@ -56,7 +67,7 @@
     		<div class="content-overlay"></div>
     		<img class="content-image" src="/static/images/hackcoppah.png">
     		<div class="content-details fadeIn-bottom">
-    		<h3 class="content-title">VENT</h3>
+    		<a href="/chat.html"><h3 class="content-title">VENT</h3></a>
     		</div>
     		</div>
         </div>
@@ -65,7 +76,7 @@
       		<div class="content-overlay"></div>
       		<img class="content-image" src="/static/images/hackcoppah2.png">
       		<div class="content-details fadeIn-bottom">
-      		<h3 class="content-title">LISTEN</h3>
+      		<a href="/chat.html"><h3 class="content-title">LISTEN</h3></a>
       		</div>
       		</div>
           </div>
@@ -78,27 +89,18 @@
     <p>If you are facing a life threatening issue please call 911</p>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBHAzVwmvR68EckfNZo7i0gIzUudZUvzaY",
+        authDomain: "friendly-hack.firebaseapp.com",
+        databaseURL: "https://friendly-hack.firebaseio.com",
+        projectId: "friendly-hack",
+        storageBucket: "friendly-hack.appspot.com",
+        messagingSenderId: "788728620931"
+      };
+      firebase.initializeApp(config);
     </script>
     <script src="/static/javascript/index.js"></script>
   </body>
