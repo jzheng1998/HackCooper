@@ -85,15 +85,16 @@
 
     // Loads chat messages history and listens for upcoming ones.
     $(function () {
-        var callback = function (snap) {
-          var data = snap.val();
-          var messages = new displayMessage({
-              key: snap.key,
-              name: data.name,
-              text: data.text,
-              profilePicUrl: data.profilePicUrl
-          });
+      var callback = function (snap) {
+        var data = snap.val();
+        var messages = new displayMessage({
+            key: snap.key,
+            name: data.name,
+            text: data.text,
+            profilePicUrl: data.profilePicUrl
+        });
       }
+      firebase.database().ref('/messages/').remove();
       firebase.database().ref('/messages/').limitToLast(15).on('child_added', callback);
       firebase.database().ref('/messages/').limitToLast(15).on('child_changed', callback);
     });
