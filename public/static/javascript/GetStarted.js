@@ -93,7 +93,7 @@
   var search;
 
   search = function () {
-    window.location.href = '/chat.html?' + $('#searchBar').val();
+    window.location.href = '/professionals.html?' + $('#searchBar').val();
   }
 
   $('#searchButton').click(function (e) {
