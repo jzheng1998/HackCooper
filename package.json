@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JZ987/HackCooper/issues"
   },
-  "homepage": "https://github.com/JZ987/HackCooper#readme"
+  "homepage": "https://github.com/JZ987/HackCooper#readme",
+  "dependencies": {
+    "algoliasearch": "^3.30.0"
+  }
 }

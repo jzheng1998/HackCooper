@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Resources Near You</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearchLite.min.js"></script>
+
+	<link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    Location: <input name="userInput" type="text" id="searchTxt" />
+    <div id="result"></div>
+    <script>
+        var algoliasearch = require('algoliasearch');
+        var client = algoliasearch('I01LI0L3ZG', '0454cf70675f56b699739bd7770c3f6b');
+        var index = client.initIndex('Psychologists');
+        index.search(document.getElementById("searchTxt").value, function(err, results) {
+            if (err) {
+                throw err;
+            }
+            document.getElementById('result').innerHTML = "<p>"+results.nbHits+"</p>";
+            document.getElementById('result').innerHTML = "<p>Here is the first one: "+results.hits[0]+"</p>";
+        });
+    </script>
+</body>
+</html>
